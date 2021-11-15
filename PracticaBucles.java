@@ -31,8 +31,30 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n)   {
-       //TODO
-
+        int numAleatorio = 0;
+        int c = 0;
+        int cColumnas = 0; 
+        int sumaValores = 0;
+        int sumaImpares = 0;
+        while(c<n || numAleatorio == 0){
+            numAleatorio = -1000 + generador.nextInt(5001);
+            System.out.printf("%12d%5d",numAleatorio,obtenerNumeroSinCeros(numAleatorio));
+            sumaValores= sumaValores +  numAleatorio + obtenerNumeroSinCeros(numAleatorio);
+            if (esImpar(numAleatorio) || esImpar (obtenerNumeroSinCeros(numAleatorio))){
+                sumaImpares = sumaImpares + numAleatorio + obtenerNumeroSinCeros(numAleatorio);
+            }
+            cColumnas++;
+            while(cColumnas>4){
+                System.out.println();
+                cColumnas = 0;
+            }
+            c++;
+        }
+        double media = sumaValores / n*2;
+        System.out.println(sumaImpares);
+        String med = "media: ";
+        String sImpares = "suma impares: ";
+        System.out.printf("%25s%10.2f",med,media);
     }
 
     /**
@@ -65,7 +87,7 @@ public class PracticaBucles {
                 numero /= 10;
                 exponente ++;
             }
-            
+
         }
         return resultado;
     }
@@ -89,7 +111,7 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-       //TODO
+        //TODO
 
     }
 
@@ -98,11 +120,7 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-       //TODO
-       
-       
-       
-       
-    }
+        //TODO
 
+    }
 }
