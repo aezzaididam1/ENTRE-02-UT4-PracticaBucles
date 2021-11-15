@@ -24,10 +24,20 @@ public class TestPracticaBucles
      *  
      */
     public static void main(String[] args)    {
-        //TODO
+        Scanner teclado = new Scanner(System.in);
+        PracticaBucles pracBuc = new PracticaBucles();
+        System.out.println("Escribe la cantidad maxima de numeros aleatorios a generar");
+        int opcion = teclado.nextInt();
+        while(opcion<=0){
+            System.out.println("No es una opcion valida");
+            System.out.println("Escribe la cantidad maxima de numeros aleatorios a generar");
+            opcion = teclado.nextInt();
+        }
+        pracBuc.generarNumeros(opcion);
         
-        
-        
+        Utilidades.hacerPausa();
+        Utilidades.borrarPantalla();
+
         
     }
 }

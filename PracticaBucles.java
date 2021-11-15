@@ -1,6 +1,6 @@
 import java.util.Random;
 /**
- *    
+ *    @Amine
  */
 public class PracticaBucles {
     private final char ESPACIO = ' ';
@@ -36,12 +36,17 @@ public class PracticaBucles {
         int cColumnas = 0; 
         int sumaValores = 0;
         int sumaImpares = 0;
+        int maxim = 0;
         while(c<n || numAleatorio == 0){
             numAleatorio = -1000 + generador.nextInt(5001);
             System.out.printf("%12d%5d",numAleatorio,obtenerNumeroSinCeros(numAleatorio));
             sumaValores= sumaValores +  numAleatorio + obtenerNumeroSinCeros(numAleatorio);
             if (esImpar(numAleatorio) || esImpar (obtenerNumeroSinCeros(numAleatorio))){
                 sumaImpares = sumaImpares + numAleatorio + obtenerNumeroSinCeros(numAleatorio);
+            }
+
+            if (esImpar(numAleatorio) == false){
+                maxim = Math.max (maxim,numAleatorio);
             }
             cColumnas++;
             while(cColumnas>4){
@@ -50,11 +55,9 @@ public class PracticaBucles {
             }
             c++;
         }
-        double media = sumaValores / n*2;
-        System.out.println(sumaImpares);
-        String med = "media: ";
-        String sImpares = "suma impares: ";
-        System.out.printf("%25s%10.2f",med,media);
+        double media = sumaValores / n*2;       
+        System.out.printf("\n%25s%10.2f\n%25s%10d\n%25s%10d","Media: ",media,"Suma impares:",sumaImpares,"Maximo pares: ",maxim);
+
     }
 
     /**
@@ -111,7 +114,6 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-        //TODO
 
     }
 
@@ -120,7 +122,6 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-        //TODO
-
+      
     }
 }
